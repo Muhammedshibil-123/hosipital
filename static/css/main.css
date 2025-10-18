@@ -2,7 +2,9 @@
 @import url(components/doctors.css);
 @import url(components/booking.css);
 @import url(components/confiramation.css);
-
+@import url(components/about.css);
+@import url(components/contact.css);
+@import url(components/home.css);
 
 
 
@@ -110,6 +112,29 @@ body {
   flex-direction: column;
   gap: 5px;
   font-size: 15px;
+}
+
+
+.navlogin, .btn-logout {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+
+.navlogin, .btn-logout {
+  background-color: transparent;
+  color: #000;
+}
+
+.navlogin:hover, .btn-logout:hover {
+  background-color: #C62828; 
+  color: white;
 }
 
 /* Responsive */

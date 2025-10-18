@@ -4,6 +4,20 @@
 Home
 {% endblock %}
 
+{%  load static %}
 {% block content %}
-<h1>Home Page</h1>
+
+<div class="hero-section">
+  <img src="{% static 'images/hospital.jpg' %}" alt="KMCT Hospital building">
+</div>
+
+<div class="home-about-section">
+  <p class="home-about-subtitle">About Us</p>
+  <h1 class="home-about-title">The Kunhitharuvai Memorial Charitable Trust</h1>
+  <p class="home-about-text">
+    The accessibility of super specialty facilities was a cherished dream for people who rush to Calicut from hilly areas of the Western Ghats. KMCT Medical College Hospital, situated at the foot of the Western Ghats, remained as a benevolent, dutiful hand extended to them.
+  </p>
+  <a href="{% url 'about' %}" class="btn-read-more">Read more →</a>
+</div>
+
 {% endblock %}

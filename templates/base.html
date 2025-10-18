@@ -1,50 +1,60 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
-
-  
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="{% static 'images/logo.png' %}" alt="KMCT Logo" />
-        <div class="logo-text">
-          <h1>KMCT</h1>
-          <p>Medical College Hospital</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="KMCT Logo" />
+          <div class="logo-text">
+            <h1>KMCT</h1>
+            <p>Medical College Hospital</p>
+          </div>
         </div>
+        <nav style="display: flex; justify-content: center; align-items: center;">
+          <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'booking' %}">Booking</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'department' %}">Department</a></li>
+            <li><a href="{% url 'contacts' %}">Contact us</a></li>
+          </ul>
+          {% if user.is_authenticated %}
+          <div style="margin-left: 30px;">
+            <form
+              action="{% url 'logout' %}"
+              method="post"
+              style="display: inline"
+            >
+              {% csrf_token %}
+              <button type="submit" class="btn-logout">Logout</button>
+            </form>
+          </div>
+          {% else %}
+          <div style="margin-left: 30px;">
+          <a href="{% url 'login' %}"
+            ><button class="navlogin">Login</button></a
+          >
+          </div>
+          {% endif %}
+        </nav>
       </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}" >About Us</a></li>
-          <li><a href="{% url 'booking' %}">Booking</a></li>
-          <li><a href="{% url 'doctors' %}">Doctors</a></li>
-          <li><a href="{% url 'department' %}">Department</a></li>
-          <li><a href="{% url 'contacts' %}">Contact us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
- 
-  <main class="main-content">
-    {% block content %}
-    
-    {% endblock %}
-  </main>
+    <main class="main-content">{% block content %} {% endblock %}</main>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <p>Emergency Contact: 0495 229 3500</p>
-      <p>&copy; 2025 KMCT Medical College Hospital. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-</body>
+    <footer class="footer">
+      <div class="footer-container">
+        <p>Emergency Contact: 0495 229 3500</p>
+        <p>&copy; 2025 KMCT Medical College Hospital. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

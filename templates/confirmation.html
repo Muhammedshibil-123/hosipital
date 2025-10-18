@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Booking confirmation
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<div class="confirmation-section">
+  <div class="confirmation-card">
+    <img src="{% static 'images/bluetick.png' %}" alt="Success" class="confirm-icon">
+    <h1 class="confirm-title">Booking Confirmed!</h1>
+    <p class="confirm-message">
+      We’ve received your appointment request. Our representative will contact you shortly.
+    </p>
+    <a href="{% url 'home' %}" class="btn-back">Go Back Home</a>
+  </div>
+</div>
+{% endblock %}

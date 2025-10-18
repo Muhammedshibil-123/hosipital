@@ -12,7 +12,7 @@ def about(request):
     return render(request,'about.html')
 
 def booking(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()

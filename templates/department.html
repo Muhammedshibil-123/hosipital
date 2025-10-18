@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Department
+{% endblock %}
+
+{% block content %}
+<div class="department-section">
+  <h1 class="section-title">Our Departments</h1>
+  <hr class="section-divider">
+
+  <div class="department-grid">
+    {% for d in dept %}
+    <div class="department-card">
+      <h2 class="department-name">{{ d.dep_name }}</h2>
+      <p class="department-description">{{ d.dep_description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

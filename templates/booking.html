@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Booking
+{% endblock %}
+
+{% block content %}
+<div class="booking-section">
+  <h1 class="section-title">Make an Appointment</h1>
+  <hr class="section-divider">
+
+  <div class="booking-form-container">
+    <form method="POST" class="booking-form">
+      {% csrf_token %}
+
+     {{ form.errors }}
+
+      {{ form.as_p }}
+      <button type="submit" class="btn-submit">Book Now</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

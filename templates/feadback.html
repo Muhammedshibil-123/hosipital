@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>fead</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Booking
+{% endblock %}
+
+{% block content %}
+<div >
+  <h1 >Share Your Feedback</h1>
+  <p>Select your doctor and tell us about your experience. Your feedback helps us improve our service.</p>
+  <hr>
+
+  <div >
+    <form method="POST" >
+      {% csrf_token %}
+
+     {{ form.errors }}
+
+      {{ form.as_p }}
+      <button type="submit" >Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

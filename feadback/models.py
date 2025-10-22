@@ -1,5 +1,5 @@
 from django.db import models
-from ..home.models import Doctors
+from home.models import Doctors
 
 # Create your models here.
 class Feadback(models.Model):

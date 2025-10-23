@@ -1,20 +1,28 @@
-{% extends 'base.html' %}
-
-{% block title %}Login{% endblock %}
-
-{% block content %}
-<div class="booking-section">
-  <h1 class="section-title">Login to Your Account</h1>
-  <hr class="section-divider">
-  <div class="booking-form-container">
-    <form method="post" class="booking-form">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn-submit">Login</button>
-    </form>
- 
-   <p style="font-size: 14px;">Don’t have an account? <a href="{% url 'signup' %}">Signup</a></p>
-
-  </div>
-</div>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body >
+    <main class="main-content">
+      <div class="booking-section">
+        <h1 class="section-title">Login to Your Account</h1>
+        <hr class="section-divider">
+        <div class="booking-form-container">
+          <form method="post" class="booking-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Login</button>
+          </form>
+       
+         <p style="font-size: 14px;">Don’t have an account? <a href="{% url 'signup' %}">Signup</a></p>
+      
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

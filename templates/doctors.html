@@ -10,10 +10,12 @@ Doctors
   <h1 class="section-title">Doctors</h1>
   <hr class="section-divider">
    
-<a href="{% url 'fead' %}" class="btn-fead">
-  Give Feedback
-  <img src="{% static 'plus.png' %}"  class="plus-icon">
-</a>
+  <div class="feedback-link-container">
+    <a href="{% url 'fead' %}" class="btn-fead">
+      Give Feedback
+      <img src="{% static 'images/plus.png' %}"  class="plus-icon">
+    </a>
+  </div>
 
   <div class="doctors-grid">
     {% for d in doctors %}

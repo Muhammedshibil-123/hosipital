@@ -1,5 +1,3 @@
-
-
 .doctors-section {
   padding: 50px 20px;
   text-align: center;
@@ -29,6 +27,9 @@
   gap: 10px;
   justify-items: center;
   align-items: stretch;
+  /* Ensure grid is centered if it doesn't fill the width */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .doctor-card {
@@ -73,26 +74,44 @@
   font-style: italic;
 }
 
+/* --- NEW STYLES START HERE --- */
+
+/* New container to handle alignment */
+.feedback-link-container {
+  max-width: 1200px; /* Matches the main container width */
+  margin: 0 auto 30px auto; /* Centers container and adds bottom margin */
+  padding: 0 20px; /* Aligns with content padding */
+  text-align: right; /* Aligns the link to the right */
+}
+
+/* Re-styled feedback button */
 .btn-fead {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #007bff;
-  color: #fff;
+  
+  /* Your requested styles */
+  background: transparent; /* No background */
+  color: #000; /* Black text */
+  text-decoration: none; /* No underline by default */
+  
+  /* Resetting old styles */
   font-size: 1rem;
   font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-bottom: 30px;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  margin: 0;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  box-shadow: none;
 }
 
 .btn-fead:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 91, 187, 0.3);
+  background: transparent;
+  color: #000;
+  transform: none; 
+  box-shadow: none; 
+  text-decoration: none; /* Adds underline on hover */
 }
 
 .plus-icon {
@@ -109,5 +128,10 @@
   }
   .doctor-img {
     height: 200px;
+  }
+  
+  .feedback-link-container {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }

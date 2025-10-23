@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Departments,Doctors
 from .forms import BookingForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -11,6 +12,7 @@ def index(request):
 def about(request):
     return render(request,'about.html')
 
+@login_required
 def booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)

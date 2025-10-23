@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Booking
+Feedback
 {% endblock %}
 
 {% block content %}
-<div >
-  <h1 >Share Your Feedback</h1>
-  <p>Select your doctor and tell us about your experience. Your feedback helps us improve our service.</p>
-  <hr>
+<div class="feedback-container">
+  <h1 class="feedback-title">Share Your Feedback</h1>
+  <p class="feedback-description">
+    Select your doctor and tell us about your experience. Your feedback helps us improve our service.
+  </p>
+  
 
-  <div >
-    <form method="POST" >
+  <div class="feedback-form-container">
+    <form method="POST" class="feedback-form">
       {% csrf_token %}
+      
+      <div class="form-errors">
+        {{ form.errors }}
+      </div>
 
-     {{ form.errors }}
+      <div class="form-fields">
+        {{ form.as_p }}
+      </div>
 
-      {{ form.as_p }}
-      <button type="submit" >Submit</button>
+      <button type="submit" class="submit-btn">Submit Feedback</button>
     </form>
   </div>
 </div>

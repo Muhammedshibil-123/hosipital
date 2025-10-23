@@ -4,10 +4,16 @@
 Doctors
 {% endblock %}
 
+{% load static %}
 {% block content %}
 <div class="doctors-section">
   <h1 class="section-title">Doctors</h1>
   <hr class="section-divider">
+   
+<a href="{% url 'fead' %}" class="btn-fead">
+  Give Feedback
+  <img src="{% static 'plus.png' %}"  class="plus-icon">
+</a>
 
   <div class="doctors-grid">
     {% for d in doctors %}

@@ -3,5 +3,10 @@ from .models import Feadback
 
 class feadbackform(forms.ModelForm):
     class Meta:
-        model:Feadback
+        model=Feadback
         fields=['fead_dec','fead_doc']
+
+        labels={
+            'fead_dec':'',
+            'fead_doc':'Choose a Doctor '
+        }

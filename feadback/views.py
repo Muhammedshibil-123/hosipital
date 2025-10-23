@@ -7,7 +7,7 @@ def fead(request):
         form=feadbackform(request.POST)
         if form.is_valid():
             form.save()
-            return render(request,'confirmation.html')
+            return render(request,'feadtick.html')
     else:
         form=feadbackform()
     return render(request,'feadback.html',{'form':form})
